@@ -17,17 +17,25 @@ if(!isset($_SESSION['user'])!="")
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
-    <title>Profile</title>
+    <title>Marketplace</title>
     <!-- Favicons-->
    <link rel="icon" href="images/new.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/new.png" sizes="32x32">
     <!--  Android 5 Chrome Color-->
     <meta name="theme-color" content="#EE6E73">
     <!-- CSS-->
     <link href="css/prism.css" rel="stylesheet">
-     <link href="css/accept.css" rel="stylesheet">
+     <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="css/reset.css">
+
+   <link rel='stylesheet prefetch' href='css/default.css'>
+
+       <link rel="stylesheet" href="css/style1.css">
+
+    
     
     <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
@@ -41,26 +49,39 @@ if(!isset($_SESSION['user'])!="")
         autocollect: true
       };
     </script>
+     <script type = "text/javascript">
+    function hide(i){
+     //alert(i);
+    document.getElementById("accept"+i).style.visibility="hidden";
+     document.getElementById("already"+i).style.visibility="visible";
+    
+   
+    }
+    </script>
     <script src="//cdn.transifex.com/live.js"></script>
   </head>
   <body>
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.html" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
         </div>
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
+
+
+      <img src ="images/new.png" height="225" width="225" >
+            
         
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
 
-        <li class="bold"><a class=fo href="about.html" class="waves-effect waves-teal">About</a></li>
-        <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
+        <li class="bold"><a class=fo href="home.html" class="waves-effect waves-teal">Home</a></li>
+        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
         
-        <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
-        <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
+        <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
+        <li class="bold"><a href="contact.html" class="waves-effect waves-teal">Contact Us</a></li>
       </ul>
 
       </a>
@@ -71,27 +92,13 @@ if(!isset($_SESSION['user'])!="")
     <div class="col s12 m9 l10">
 
   <!-- Cards Section-->
-      <div id="basic" class="section scrollspy">
-        <p class="caption">Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.</p>
-        <h2 class="header">Basic Card</h2>
+      
+        <h2 class="header">Marketplace</h2>
 
-        <div class="row">
-          <div class="col s12 m24">
-            <!-- Basic Card -->
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
+     
 
           
-              <?php
+             <?php
 session_start();
 include_once 'dbconnect.php'; 
 $servername = "localhost";
@@ -135,53 +142,57 @@ $x = 1;
  	for($i=0;$i<2;$i++)
  	{
  	if($quo[$i] == $user_id_2)
- 	 	$apple = "banana";
+ 	 	$flag=1;
  	 
  	}
- 	if($status==0)
- 	$status = "Active";
- 	else if ($status==1)
- 	$status = "Completed";
+ 	if($status==0){
+ 	$status = "Active";}
+ 	else if ($status==1){
+ 	//$status = "Completed";
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card light-green accent-3";</script>';
+ 	}
  	else
- 	$status = "Failed";
+ 	$status = "Failed";-->
  	
-// 	if($flag==1)
  	
- 	//else
- 	//$apple = "apple";
+ 	
 
          echo'<div class="row">
         <div class="col s12 m24">
-          <div class="card red darken-1">
+          <div class="card red darken-1" id = "'.$x.'">
             <div class="card-content white-text">';
             echo'<span class="card-title">'.$status.'</span>';
-                         echo"<p>#". $row['request_id']." Date:".$date." || Teacher:".$teacher.$apple.$quo[0]." section: ".$section." ". $batch."</p><br>";
+                         echo"<p> Date:".$date." || Teacher:".$teacher." || ".$apple." || section: ".$section."  || ". $batch."</p><br>";
                          echo"<p> Treat: ". $row['treat']." Other:".$other." Requested By:".$user_id."</p>";
            echo' </div>
             <div class="card-action">
-              <a id = "accept'.$x.'" onclick = "hide('.$x.')"> <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn">Slide In</button></a>
-              <a  id = "already'.$x.'"style = "visibility:hidden"> <button class="ctrl-standard typ-subhed fx-bubbleDown">Bubble down</button></a>
+              <a id = "accept'.$x.'" onclick = "hide('.$x.')"> <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn">Request Proxy</button></a>
+              <a  id = "already'.$x.'"style = "visibility:hidden"> <button class="ctrl-standard is-reversed typ-subhed fx-bubbleDown">Proxy Submitted
+         </button></a>
             </div>
           </div>
         </div>
       </div>';
-      $x++;
+   
+      
+ 	if($flag==1)
+ 	echo '<script type = "text/javascript">hide('.$x.');</script>';
+ 	
+ 	if ($status==1){
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card green accent-3";alert("hi");</script>';
+ 	}
+ 	
+ 	   $x++;
+ 	
+ 	
       }
             
 
-        ?>//<script type = "text/javascript">
+        ?><script type = "text/javascript">
         //alert(<?php echo $quo[1] ?>);</script>
             
     <!--  Scripts-->
-    <script type = "text/javascript">
-    function hide(i){
-     alert(i);
-    document.getElementById("accept"+i).style.visibility="hidden";
-     document.getElementById("already"+i).style.visibility="visible";
-    
    
-    }
-    </script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>if (!window.jQuery) { document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>'); }
     </script>
