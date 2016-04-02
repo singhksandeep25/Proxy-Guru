@@ -42,10 +42,10 @@ if($active==0)
       <ul class="right hide-on-med-and-down">
         <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-  <li><a href = "#services">Privacy Policy</a></li>
-  <li><a href = "#contact">Contact Us</a></li>
-  <li><a href = "login.php">Login</a></li>
-  <li><a href = "register.php">Signup</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
+	<li><a href = "#contact">Contact Us</a></li>
+	<li><a href = "login.php">Login</a></li>
+	<li><a href = "register.php">Signup</a></li>
 
       </ul>
 
@@ -56,10 +56,10 @@ if($active==0)
   <ul id="slide-out" class="side-nav">
      <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-  <li><a href = "#services">Privacy Policy</a></li>
-  <li><a href = "#contact">Contact Us</a></li>
-  <li><a href = "login.php">Login</a></li>
-  <li><a href = "register.php">Signup</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
+	<li><a href = "#contact">Contact Us</a></li>
+	<li><a href = "login.php">Login</a></li>
+	<li><a href = "register.php">Signup</a></li>
   </ul>
   <a href="#home" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu" style="color:black;"></i></a>
 
@@ -132,7 +132,7 @@ if($active==0)
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 -text">some statement here </h3>
-    <h6 class="header col s12 white-text ">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>
+	  <h6 class="header col s12 white-text ">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>
         </div>
       </div>
     </div>
@@ -159,9 +159,9 @@ if($active==0)
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 light">some statement here </h3>
-  
-    <h2 class="header col s12 white-text">some statement here </h2>
-    <h6 class="header col s12 white-text">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>    
+	
+	  <h2 class="header col s12 white-text">some statement here </h2>
+	  <h6 class="header col s12 white-text">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>		
         </div>
       </div>
     </div>
@@ -176,10 +176,12 @@ if($active==0)
         <div class="col s12 center">
           <h3><i class="material-icons"></i></h3>
           <h4>About Us</h4>
-          <p class="left-align light"> some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here 
+          <p class="left-align light">Abhinav Khare
+	<p class="right-align light">Sandeep Kumar Singh</p>
+	<p class="centre-align light"></p>
+
+  <p class="left-align light"> We three are college students currently pursuing Bachelors in Technology from Indian Institute of Information Technology, Allahabad
 </p>
-  <p class="left-align light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-  <p class="left-align light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
         </div>
       </div>
 
@@ -191,7 +193,7 @@ if($active==0)
       <div class="container">
         <div class="row center">
          <h2 class="header col s12 red-text text-darken-3">some statement here </h2>
-    <h6 class="header col s12 red-text text-darken-3">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </h6> 
+	  <h6 class="header col s12 red-text text-darken-3">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </h6>	
         </div>
       </div>
     </div>
@@ -206,19 +208,19 @@ if($active==0)
         <div class="col s12 center">
           <h3><i class="material-icons"></i></h3>
           <ul class="collection with-header">
-        <li class="collection-header"><h4>some statement here </h4></li>
+        <li class="collection-header"><h4>Privacy Policy</h4></li>
         <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
 
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
-  <li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
+	<li class="collection-item">some statement here </li>
 
     </ul>
         </div>
@@ -236,10 +238,10 @@ if($active==0)
       <div class="container">
 
         <div class="row center">
-          <h2 class="header col s12 white-text">Contact Us</h2>
-    <h5 class="header col s12 red-text text-darken-3">some statement here </h5>
+          <h2 class="header col s12 white-text">some statement here</h2>
+	  <h5 class="header col s12 red-text text-darken-3">some statement here </h5>
 <h5 class="header col s12 red-text">some statement here </h5>
-<h5 class="header col s12 red-text">some statement here </h5> 
+<h5 class="header col s12 red-text">some statement here </h5>	
         </div>
       </div>
     </div>
@@ -250,10 +252,11 @@ if($active==0)
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Mailing Adress</h5>
-          <p class="white-text" >some statement here some statement here some statement here some statement here </p>
-<p class="white-text"> some statement here some statement here </p>
-<p class="white-text">some statement here some statement here some statement here </p>
+          <h5 class="white-text">Contact Us</h5>
+          <p class="white-text" >For hugs and bugs, shoot an email to any of us: </p>
+          <p class="white-text" >Abhinav Khare : iit2015036@iiita.ac.in</p>
+<p class="white-text">Sandeep Kumar Singh : iit2015014@iiita.ac.in</p>
+<p class="white-text">Shubham Padia : iit2015074@iiita.ac.in</p>
 </div>
         
 
