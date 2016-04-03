@@ -22,7 +22,7 @@ if(!isset($_SESSION['user'])!="")
    <link rel="icon" href="images/new.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/new.png" sizes="32x32">
     <!--  Android 5 Chrome Color-->
     <meta name="theme-color" content="#EE6E73">
     <!-- CSS-->
@@ -57,6 +57,17 @@ if(!isset($_SESSION['user'])!="")
     
    
     }
+    function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     //document.getElementById("demo").innerHTML = xhttp.responseText;
+    	console.log("jhrllo");
+    }
+  };
+  xhttp.open("GET", "req.php?accept_id=2", true);
+  xhttp.send();
+} 
     </script>
     <script src="//cdn.transifex.com/live.js"></script>
   </head>
@@ -70,14 +81,16 @@ if(!isset($_SESSION['user'])!="")
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
         
+       <img src ="images/new.png" height="225" width="225" >
+        
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
 
-        <li class="bold"><a class=fo href="about.html" class="waves-effect waves-teal">About</a></li>
-        <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
+        <li class="bold"><a class=fo href="home.html" class="waves-effect waves-teal">Home</a></li>
+        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
         
-        <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
-        <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
+        <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
+        <li class="bold"><a href="contact.html" class="waves-effect waves-teal">Contact Us</a></li>
       </ul>
 
       </a>
@@ -126,8 +139,9 @@ $x = 1;
  	$batch = $row['batch'];
  	$other = $row['other'];
  	$status = $row['color'];
+ 	$quo = explode(" ",$request_users);
  	if($user_id==$user_id_2){
-  	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card light-green accent-3";</script>';
+  	//echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card light-green accent-3";</script>';
  	
  	
  	
@@ -137,26 +151,27 @@ $x = 1;
           <div class="card red darken-1" id = "'.$x.'">
             <div class="card-content white-text">';
             echo'<span class="card-title">'.$status.'</span>';
-                         echo"<p> Date:".$date." || Teacher:".$teacher." || ".$apple." || section: ".$section."  || ". $batch."</p><br>";
-                         echo"<p> Treat: ". $row['treat']." Other:".$other." Requested By:".$user_id."</p>";
-           echo' </div>
+                         echo"<p> <b>Date</b> : ".$date." || <b>Teacher</b> : ".$teacher." || ".$apple." || <b>Section</b> : ".$section."  || ". $batch."</p><br>";
+                         echo"<p> Treat : ". $row['treat']." Other Treat Options : ".$other." Requested By : ".$user_id."</p>";
+                          for($j=0;$j<$request_no;$j++)
+                         {
+                         echo '<script>var btn = document.createElement("BUTTON");btn.className = "ctrl-standard is-reversed typ-subhed fx-sliderIn";var t = document.createTextNode('.$quo[$j].');alert('.$quo[$j].'); btn.appendChild(t); btn.addEventListener("click", alert(0));
+
+document.getElementById("'.$x.'").appendChild(btn); </script>  '  ;             // Append <button> to <body>';
+                         }
+                        
+            echo'</div>
             <div class="card-action">
-              <a id = "accept'.$x.'" onclick = "hide('.$x.')"> <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn">Request Proxy</button></a>
-              <a  id = "already'.$x.'"style = "visibility:hidden"> <button class="ctrl-standard is-reversed typ-subhed fx-bubbleDown">Proxy Submitted
+              <a id = "accept'.$x.'" > <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn" onclick="loadDoc()">Yes</button></a>
+              <a  id = "already'.$x.'"> <button class="ctrl-standard is-reversed typ-subhed fx-bubbleDown">No
          </button></a>
             </div>
           </div>
         </div>
-      </div>';
-   
-      
- 	
- 	
- 	}
-      
-  }          
-
-        ?><script type = "text/javascript">
+      </div>';$x++;
+ 	}}
+?>
+<script type = "text/javascript">
         //alert(<?php echo $quo[1] ?>);</script>
             
     <!--  Scripts-->
