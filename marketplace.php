@@ -17,7 +17,7 @@ if(!isset($_SESSION['user'])!="")
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
-    <title>Marketplace</title>
+    <title>The Proxy Place</title>
     <!-- Favicons-->
    <link rel="icon" href="images/new.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -65,7 +65,7 @@ if(!isset($_SESSION['user'])!="")
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "index.php" class="page-title">Home</a></div>
         </div>
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
@@ -76,12 +76,13 @@ if(!isset($_SESSION['user'])!="")
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
 
-        <li class="bold"><a class=fo href="home.php
+        <li class="bold"><a class=fo href="index.php
         " class="waves-effect waves-teal">Home</a></li>
-        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
+        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">The Proxy Place</a></li>
         
         <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
         <li class="bold"><a href="contact.php" class="waves-effect waves-teal">Contact Us</a></li>
+        <li class="bold"><a href="logout.php" class="waves-effect waves-teal">Logout</a></li>
       </ul>
 
       </a>
@@ -93,7 +94,7 @@ if(!isset($_SESSION['user'])!="")
 
   <!-- Cards Section-->
       
-        <h2 class="header">Marketplace</h2>
+        <h2 class="header">The Proxy Place</h2>
 
         
 
@@ -114,7 +115,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT request_id, user_id,request_users,request_no, date,teacher,treat,other,color,batch,section from request";
+$sql = "SELECT request_id, user_id,request_users,request_no, date,teacher,treat,other,color,batch,section from request order by date DESC";
 $sql2 = "SELECT my_requests from users where user_id = ".$user_id_2;
 $result = $conn->query($sql);
 $result2 = $conn->query($sql2);
@@ -137,6 +138,7 @@ $x = 1;
  	$batch = $row['batch'];
  	$other = $row['other'];
  	$status = $row['color'];
+ 	$color = $status;
  	$flag=0;
  	$apple="apple";
  	$quo = explode(" ",$request_users);
@@ -149,16 +151,18 @@ $x = 1;
  	if($status==0){
  	$status = "Active";}
  	else if ($status==1){
- 	//$status = "Completed";
+ 	$status = "Completed";
  	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card light-green accent-3";</script>';
  	}
- 	else
+ 	else{
  	$status = "Failed";
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card red accent-3";</script>';
+ 	}
  	
 
          echo'<div class="row">
         <div class="col s12 m24">
-          <div class="card red darken-1" id = "'.$x.'">
+          <div class="card black-we-want" id = "'.$x.'">
             <div class="card-content white-text">';
             echo'<span class="card-title">'.$status.'</span>';
                          echo"<p><b> Date </b>: ".$date." || <b>Teacher </b>: ".$teacher." || ".$apple." || <b>Section</b> : ".$section."  || ". $batch."</p><br>";
@@ -181,8 +185,16 @@ $x = 1;
 	 	
  	}
  	
- 	if ($status==1){
+ 	if ($color==1){
  	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card green accent-3";</script>';
+ 	}
+ 	else if($color==0)
+ 	{
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card blue-grey darken-1";</script>';
+ 	}
+ 	else
+ 	{
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card red";</script>';
  	}
  	
  	   $x++;
