@@ -22,7 +22,7 @@ if(!isset($_SESSION['user'])!="")
    <link rel="icon" href="images/new.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <link rel="icon" href="images/new.png" sizes="32x32">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
     <!--  Android 5 Chrome Color-->
     <meta name="theme-color" content="#EE6E73">
     <!-- CSS-->
@@ -57,6 +57,7 @@ if(!isset($_SESSION['user'])!="")
     
    
     }
+   
     </script>
     <script src="//cdn.transifex.com/live.js"></script>
   </head>
@@ -64,15 +65,13 @@ if(!isset($_SESSION['user'])!="")
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "home.html" class="page-title">Home</a></div>
         </div>
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
 
-
-      <img src ="images/new.png" height="225" width="225" >
-            
+       <img src ="images/new.png" height="225" width="225" >
         
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
@@ -95,10 +94,10 @@ if(!isset($_SESSION['user'])!="")
       
         <h2 class="header">Marketplace</h2>
 
-     
+        
 
           
-             <?php
+              <?php
 session_start();
 include_once 'dbconnect.php'; 
 $servername = "localhost";
@@ -128,6 +127,7 @@ $x = 1;
  {
  	$date = $row['date'];
  	$user_id = $row['user_id'];
+ 	$request_id = $row['request_id'];
  	$request_users = $row['request_users'];
  	$request_no = $row['request_no'];
  	$teacher = $row['teacher'];
@@ -152,9 +152,7 @@ $x = 1;
  	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card light-green accent-3";</script>';
  	}
  	else
- 	$status = "Failed";-->
- 	
- 	
+ 	$status = "Failed";
  	
 
          echo'<div class="row">
@@ -162,11 +160,11 @@ $x = 1;
           <div class="card red darken-1" id = "'.$x.'">
             <div class="card-content white-text">';
             echo'<span class="card-title">'.$status.'</span>';
-                         echo"<p> Date:".$date." || Teacher:".$teacher." || ".$apple." || section: ".$section."  || ". $batch."</p><br>";
-                         echo"<p> Treat: ". $row['treat']." Other:".$other." Requested By:".$user_id."</p>";
+                         echo"<p><b> Date </b>: ".$date." || <b>Teacher </b>: ".$teacher." || ".$apple." || <b>Section</b> : ".$section."  || ". $batch."</p><br>";
+                         echo"<p> <b>Treat</b> : ". $row['treat']." || <b>Other Treat Options</b> : ".$other." || <b>Requested By</b> : ".$user_id."</p>";
            echo' </div>
             <div class="card-action">
-              <a id = "accept'.$x.'" onclick = "hide('.$x.')"> <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn">Request Proxy</button></a>
+              <a id = "accept'.$x.'" onclick = "hide('.$x.'); loadDoc('.$request_id.');"> <button class="ctrl-standard is-reversed typ-subhed fx-sliderIn">Request Proxy</button></a>
               <a  id = "already'.$x.'"style = "visibility:hidden"> <button class="ctrl-standard is-reversed typ-subhed fx-bubbleDown">Proxy Submitted
          </button></a>
             </div>
@@ -176,7 +174,11 @@ $x = 1;
    
       
  	if($flag==1)
- 	echo '<script type = "text/javascript">hide('.$x.');</script>';
+ 	{echo '<script type = "text/javascript">hide('.$x.');</script>';
+ 	$sqlr1  = mysql_query("UPDATE requests SET  request_users = CONCAT(request_users,$user_id_2) , request_no = request_no + 1 WHERE request_id = ".$request_id);
+ 	
+	 	
+ 	}
  	
  	if ($status==1){
  	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card green accent-3";alert("hi");</script>';
@@ -189,7 +191,34 @@ $x = 1;
             
 
         ?><script type = "text/javascript">
-        //alert(<?php echo $quo[1] ?>);</script>
+        //alert(<?php echo $quo[1] ?>);
+        function post()
+        {
+        var request_id=<?php echo $request_id; ?>;
+        $.post('validate.php',{postrequest_id : request_id},
+        function(data)
+        {
+         $('#result').html(data);
+        });
+        }
+         function loadDoc(z) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     //document.getElementById("demo").innerHTML = xhttp.responseText;
+    	console.log("jhrllo");
+    }
+  };
+ // var z = <?php echo $request_id;?>;
+  alert(z);
+  xhttp.open("GET", "ajax.php?request_id="+z, true);
+  xhttp.send();
+} 
+        
+       
+        </script>
+
+ 
             
     <!--  Scripts-->
    
