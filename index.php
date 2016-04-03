@@ -164,7 +164,7 @@ if($active==0)
 <p class="left-align light"> We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.
 </p>
 <h5>Want to know more?</h5>
-<p class="left-align light"> Click <a href ="contact.php">here!</a>
+<p class="centre-align light"> Click <a href ="contact.php">here!</a>
 </p>
 
         </div>
