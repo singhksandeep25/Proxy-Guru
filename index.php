@@ -1,13 +1,20 @@
 <?php
-/*session_start();
+session_start();
 include_once 'dbconnect.php';
 
-if(isset($_SESSION['user']))
+if(!isset($_SESSION['user']))
 {
-header("Location: home.php");
+	header("Location: index.php");
 }
 
-*/
+$res=mysql_query("SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+$userRow=mysql_fetch_array($res);
+$active=$userRow['active'];
+if($active==0)
+{
+		header("Location: verify.php");
+}
+
 ?>
 
 
@@ -16,7 +23,8 @@ header("Location: home.php");
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>project</title>
+  <title>Home</title>
+  <link rel="icon" href="images/new.png" sizes="32x32">
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,14 +35,14 @@ header("Location: home.php");
 <a id="home">
 <div class="navbar-fixed">
 </a>
-  <nav class="#26a69a teal lighten-1" role="navigation">
+  <nav class="#5f5f5f black-we-want" role="navigation">
 
     <div class="nav-wrapper container">
       <a id="logo-container" href="#home" class="brand-logo">Home</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#why_us">Why us</a></li>
+        <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-	<li><a href = "#services">rules</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
 	<li><a href = "#contact">Contact Us</a></li>
 	<li><a href = "login.php">Login</a></li>
 	<li><a href = "register.php">Signup</a></li>
@@ -46,9 +54,9 @@ header("Location: home.php");
 
   
   <ul id="slide-out" class="side-nav">
-     <li><a href="#why_us">Why us</a></li>
+     <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-	<li><a href = "#services">rules</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
 	<li><a href = "#contact">Contact Us</a></li>
 	<li><a href = "login.php">Login</a></li>
 	<li><a href = "register.php">Signup</a></li>
@@ -66,18 +74,18 @@ header("Location: home.php");
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 style="color:white;"  class="header center grey-text text-darken-4" font-weight=800 >Welcome To quiz arena</h1>
+        <h1 style="color:black;"  class="header center cyan.lighten-3" font-weight=800 >Welcome To Proxy Solutions</h1>
         <div class="row center">
-          <h5 class="header col s12  black-text text-accent-3">test your knowledge</h5>
+          <h5 class="header col s12  black-text text-accent-3">Post your requests and help others</h5>
         </div>
         <div class="row center">
-          <a href="#overview" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">some link here</a>
+          <a href="register.php" id="download-button" class="btn-large waves-effect waves-light black-we-want">Get Started</a>
         </div>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax" id="over"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax" id="over"><img src="images/fcfcfc.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 <a name="overview">
@@ -87,30 +95,15 @@ header("Location: home.php");
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">trending_up</i></h2>
-            <h5 class="center">some statement here</h5>
-
-            <p class="light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-          </div>
+          
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">perm_identity</i></h2>
-            <h5 class="center">some statement here </h5>
-
-            <p class="light">Osome statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-          </div>
+          
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">some statement here </h5>
-
-            <p class="light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here  </p>
-          </div>
+          
         </div>
       </div>
 
@@ -120,17 +113,17 @@ header("Location: home.php");
 <a id="overview">
   <div class="parallax-container valign-wrapper">
 </a>
-    <div class="section no-pad-bot">
+    <!--<div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 -text">some statement here </h3>
 	  <h6 class="header col s12 white-text ">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>
         </div>
       </div>
-    </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    </div>-->
+    <div class="parallax"><img src="fcfcfc.jpg" alt="Unsplashed background img 2"></div>
   </div>
-<a id="why_us">
+<a id="mission">
   <div class="container">
 </a>
     <div class="section">
@@ -139,15 +132,15 @@ header("Location: home.php");
         <div class="col s12 center">
           <h3><i class="material-icons"></i></h3>
 
-          <h4>Why Us?</h4>
-          <p class="left-align light"> some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
+          <h4>Mission</h4>
+          <p class="left-align light"> As fellow college students we understand the miseries students have to undergo everyday while attending boring lectures. But no worries cause we are here. We at Proxy Solutions believe that its okay to not attend a lecture or two. And what we provide is a platform to getattendance even if you don't attend a lecture. So want to go to a movie date with your girfriend and attend first day first show, go ahead!! We got you covered. Want to grab some extra sleep, sure why not. Just setup an account and send proxy requests, we will hook you up with the right peeps!! Whats more, the service is absolutely free </p>
         </div>
       </div>
 
     </div>
   </div>
  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
+    <!--<div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 light">some statement here </h3>
@@ -155,9 +148,9 @@ header("Location: home.php");
 	  <h2 class="header col s12 white-text">some statement here </h2>
 	  <h6 class="header col s12 white-text">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>		
         </div>
-      </div>
+      </div>-->
     </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="fcfcfc.jpg" alt="Unsplashed background img 2"></div>
   </div>
 <a id="about_us">
   <div class="container">
@@ -168,10 +161,12 @@ header("Location: home.php");
         <div class="col s12 center">
           <h3><i class="material-icons"></i></h3>
           <h4>About Us</h4>
-          <p class="left-align light"> some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here 
+          <a href="https://www.facebook.com/khareabhinav"><p class="left-align light">Abhinav Khare</p></a>
+	<a href="https://www.facebook.com/sandeepksingh25"><p class="left-align light">Sandeep Kumar Singh</p></a>
+	<a href="https://www.facebook.com/padiashubham?fref=ts"><p class="left-align light">Shubham Padia</p></a>
+
+  <p class="left-align light"> We three are college students currently pursuing Bachelors in Technology from Indian Institute of Information Technology, Allahabad
 </p>
-	<p class="left-align light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-	<p class="left-align light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
         </div>
       </div>
 
@@ -179,14 +174,14 @@ header("Location: home.php");
   </div>
 
   <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
+    <!--<div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
          <h2 class="header col s12 red-text text-darken-3">some statement here </h2>
 	  <h6 class="header col s12 red-text text-darken-3">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </h6>	
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="parallax"><img src="background4.png" alt="Unsplashed background img 2"></div>
   </div>
 <a id="services">
@@ -197,22 +192,17 @@ header("Location: home.php");
       <div class="row">
         <div class="col s12 center">
           <h3><i class="material-icons"></i></h3>
-          <ul class="collection with-header">
-        <li class="collection-header"><h4>some statement here </h4></li>
-        <li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
+          
+        <h4>Privacy Policy</h4>
+       <p class="left-align light"> This privacy policy sets out how Proxy Solution uses and protects any information that users give Proxy Solutions when they use this website. Proxy Solutions is committed to ensuring that your privacy is protected. If we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement. Proxy Solutions may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes.
+</p>
+<h5>Security</h5>
+<p class="left-align light"> We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.
+</p>
+<h5>Want to know more?</h5>
+<p class="centre-align light"> Click <a href ="contact.html">here!</a>
+</p>
 
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-	<li class="collection-item">some statement here </li>
-
-    </ul>
         </div>
       </div>
 
@@ -223,29 +213,30 @@ header("Location: home.php");
 <a id="contact">
   <div class="parallax-container valign-wrapper">
 </a>
-    <div class="section no-pad-bot">
+    <!--<div class="section no-pad-bot">
 
       <div class="container">
 
         <div class="row center">
-          <h2 class="header col s12 white-text">Contact Us</h2>
+          <h2 class="header col s12 white-text">some statement here</h2>
 	  <h5 class="header col s12 red-text text-darken-3">some statement here </h5>
 <h5 class="header col s12 red-text">some statement here </h5>
 <h5 class="header col s12 red-text">some statement here </h5>	
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="parallax"><img src="background6.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer teal">
+  <footer class="page-footer black-we-want">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Mailing Adress</h5>
-          <p class="white-text" >some statement here some statement here some statement here some statement here </p>
-<p class="white-text"> some statement here some statement here </p>
-<p class="white-text">some statement here some statement here some statement here </p>
+          <h5 class="white-text">Contact Us</h5>
+          <p class="white-text" >For hugs and bugs, shoot an email to any of us: </p>
+          <p class="white-text" >Abhinav Khare : iit2015036@iiita.ac.in</p>
+<p class="white-text">Sandeep Kumar Singh : iit2015014@iiita.ac.in</p>
+<p class="white-text">Shubham Padia : iit2015074@iiita.ac.in</p>
 </div>
         
 
