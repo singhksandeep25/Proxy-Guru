@@ -9,13 +9,18 @@ Can't figure out what the we have built?
 Check out the live website : http://restlesscoder.com/hint/
 
 About Us
+
+
 This website and idea was entirely concieved and made during the 36-hour Hack In The North Hackathon, organised by IIIT Allahabad
 
 We are a group of three first year students currently pursuing Bachelor in Technology in Information Technology from IIIT Allahabad
 
 Team Members:
+
 Abhinav Khare       : Backend Developer
+
 Shubham Padia       : Backend Developer
+
 Sandeep Kumar Singh : Frontend Developer
 
 
