@@ -41,7 +41,7 @@
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "index.php" class="page-title">Home</a></div>
         </div>
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
@@ -52,7 +52,7 @@
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
 
-        <li class="bold"><a class=fo href="home.php" class="waves-effect waves-teal">Home</a></li>
+        <li class="bold"><a class=fo href="index.php" class="waves-effect waves-teal">Home</a></li>
         <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
         
         <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
