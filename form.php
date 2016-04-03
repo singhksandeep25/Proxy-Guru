@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['user'])!="")
+if(isset($_SESSION['user'])=="")
 {
 	header("Location: home.php");
 }
@@ -13,15 +13,18 @@ if(isset($_POST['btn-signup']))
 	$user_id = mysql_real_escape_string($_POST['user_id']);
 	$teacher = mysql_real_escape_string($_POST['teacher']);
 	$other = mysql_real_escape_string($_POST['other']);
-	
+	$batch = mysql_real_escape_string($_POST['batch']);
+	$section = mysql_real_escape_string($_POST['section']);
 
 	$date = trim($date);
 	$treat = trim($treat);
 	$user_id = trim($user_id);
 	$teacher = trim($teacher);
 	$other = trim($other);
+	$batch = trim($batch);
+	$section = trim($section) ;
 
-	if(mysql_query("INSERT INTO request(date,treat,user_id,teacher,other) VALUES('$date','$treat','$user_id','$teacher','$other')"))
+	if(mysql_query("INSERT INTO request(date,treat,user_id,teacher,other,batch,section) VALUES('$date','$treat','$user_id','$teacher','$other','$batch','$section')"))
 	{
 		?>
 		<script>alert('successfully submitted');</script>
@@ -71,9 +74,32 @@ if(isset($_POST['btn-signup']))
 <td colspan="50"><input type="teacher" name="teacher" placeholder="Teacher" required /></td>
 </tr>
 <tr>
-<td><input type="radio" name="treat" value="cf" style="height:15px; width:15px;vertical-align: middle;" checked>Cafeteria</td>
-<td><input type="radio" name="treat" value="oc" style="height:15px; width:15px;vertical-align: middle;">Old Canteen</td>
-<td><input type="radio" name="treat" value="nc" style="height:15px; width:15px;vertical-align: middle;">Night Canteen</td>
+<td colspan="50"><a><span style = "color :black ">Batch</span></a></td>
+</tr>
+<tr>
+<td><input type="radio" name="batch" value="15" style="height:15px; width:15px;vertical-align: middle;" checked>B2K15</td>
+<td><input type="radio" name="batch" value="14" style="height:15px; width:15px;vertical-align: middle;"> B2K14</td>
+<td><input type="radio" name="batch" value="13" style="height:15px; width:15px;vertical-align: middle;"> B2K13</td>
+<td><input type="radio" name="batch" value="12" style="height:15px; width:15px;vertical-align: middle;"> B2K12</td>
+<td><input type="radio" name="batch" value="11" style="height:15px; width:15px;vertical-align: middle;"> B2K11</td>
+</tr>
+
+<tr>
+<td colspan="50"><a><span style = "color :black ">Section</span></a></td>
+</tr>
+<tr>
+<td><input type="radio" name="section" value="a" style="height:15px; width:15px;vertical-align: middle;" checked>A</td>
+<td><input type="radio" name="section" value="b" style="height:15px; width:15px;vertical-align: middle;">B</td>
+<td><input type="radio" name="section" value="c" style="height:15px; width:15px;vertical-align: middle;">C</td>
+</tr>
+<tr>
+<td colspan="50"><a><span style = "color :black ">Treat Options</span></a></td>
+</tr>
+<tr>
+<td><input type="radio" name="treat" value="Cafeteria" style="height:15px; width:15px;vertical-align: middle;" checked>Cafeteria</td>
+<td><input type="radio" name="treat" value="Old Canteen" style="height:15px; width:15px;vertical-align: middle;">Old Canteen</td>
+<td><input type="radio" name="treat" value="Night Canteen" style="height:15px; width:15px;vertical-align: middle;">Night Canteen</td>
+<td><input type="radio" name="treat" value="None" style="height:15px; width:15px;vertical-align: middle;">None</td>
 <tr>
 <td colspan="100"><input type="textarea" name="other" placeholder="Other Treat Options"></td>
 </tr>
@@ -89,4 +115,3 @@ if(isset($_POST['btn-signup']))
 </center>
 </body>
 </html>
-
