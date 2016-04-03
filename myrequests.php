@@ -1,4 +1,4 @@
-<?php
+marke<?php
 session_start();
 include_once 'dbconnect.php';
 if(!isset($_SESSION['user'])!="")
@@ -75,10 +75,10 @@ if(!isset($_SESSION['user'])!="")
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.html" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
         </div>
       </nav>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      
       <ul id="nav-mobile" class="side-nav fixed">
         
        <img src ="images/new.png" height="225" width="225" >
@@ -87,10 +87,10 @@ if(!isset($_SESSION['user'])!="")
 
 
         <li class="bold"><a class=fo href="home.html" class="waves-effect waves-teal">Home</a></li>
-        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
+        <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">The Proxy Place</a></li>
         
         <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
-        <li class="bold"><a href="contact.html" class="waves-effect waves-teal">Contact Us</a></li>
+        <li class="bold"><a href="contact.php" class="waves-effect waves-teal">Contact Us</a></li>
       </ul>
 
       </a>
@@ -116,7 +116,7 @@ $user_id_2 = $_SESSION['user'];
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-
+echo '<script>var y[100][100];</script>';
 $sql = "SELECT request_id, user_id,request_users,request_no, date,teacher,treat,other,color,batch,section from request";
 $sql2 = "SELECT my_requests from users where user_id = ".$user_id_2;
 $result = $conn->query($sql);
@@ -131,6 +131,7 @@ $x = 1;
  {
  	$date = $row['date'];
  	$user_id = $row['user_id'];
+ 	$request_id = $row['request_id'];
  	$request_users = $row['request_users'];
  	$request_no = $row['request_no'];
  	$teacher = $row['teacher'];
@@ -155,9 +156,44 @@ $x = 1;
                          echo"<p> Treat : ". $row['treat']." Other Treat Options : ".$other." Requested By : ".$user_id."</p>";
                           for($j=0;$j<$request_no;$j++)
                          {
-                         echo '<script>var btn = document.createElement("BUTTON");btn.className = "ctrl-standard is-reversed typ-subhed fx-sliderIn";var t = document.createTextNode('.$quo[$j].');alert('.$quo[$j].'); btn.appendChild(t); btn.addEventListener("click", alert(0));
+                         echo '<script>    function loadDoc(x,y) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     //document.getElementById("demo").innerHTML = xhttp.responseText;
+    	console.log("jhrllo");
+    }
+  };
+ // var z = <?php echo $request_id;?>;
+ // alert(z);
+  xhttp.open("GET", "both_accept.php?request_id="+x+"&user_id="+y, true);
+  xhttp.send();
+}                    var btn = document.createElement("a");btn.className = "waves-effect waves-light btn";var t = document.createTextNode('.$quo[$j].'); btn.appendChild(t);
+document.getElementById("'.$x.'").appendChild(btn);onclick = function(){
 
-document.getElementById("'.$x.'").appendChild(btn); </script>  '  ;             // Append <button> to <body>';
+var x = '.$user_id.';
+var y = '.$request_id.';
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     //document.getElementById("demo").innerHTML = xhttp.responseText;
+    	console.log("jhrllo");
+    }
+  };
+ // var z = <?php echo $request_id;?>;
+ // alert(z);
+  xhttp.open("GET", "both_accept.php?request_id="+y+"&user_id="+x+"", true);
+  xhttp.send();
+  xhttp.open("GET", "anon_mail.php?request_id="+y+"&user_id="+x+"", true);
+  xhttp.send();
+
+
+
+
+
+
+};
+</script>  '  ;             // Append <button> to <body>';
                          }
                         
             echo'</div>
