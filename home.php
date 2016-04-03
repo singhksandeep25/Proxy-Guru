@@ -42,10 +42,10 @@ if($active==0)
       <ul class="right hide-on-med-and-down">
         <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-  <li><a href = "#services">Privacy Policy</a></li>
-  <li><a href = "#contact">Contact Us</a></li>
-  <li><a href = "login.php">Login</a></li>
-  <li><a href = "register.php">Signup</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
+	<li><a href = "#contact">Contact Us</a></li>
+	<li><a href = "login.php">Login</a></li>
+	<li><a href = "register.php">Signup</a></li>
 
       </ul>
 
@@ -56,10 +56,10 @@ if($active==0)
   <ul id="slide-out" class="side-nav">
      <li><a href="#mission">Mission</a></li>
         <li><a href = "#about_us">About Us</a></li>
-  <li><a href = "#services">Privacy Policy</a></li>
-  <li><a href = "#contact">Contact Us</a></li>
-  <li><a href = "login.php">Login</a></li>
-  <li><a href = "register.php">Signup</a></li>
+	<li><a href = "#services">Privacy Policy</a></li>
+	<li><a href = "#contact">Contact Us</a></li>
+	<li><a href = "login.php">Login</a></li>
+	<li><a href = "register.php">Signup</a></li>
   </ul>
   <a href="#home" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu" style="color:black;"></i></a>
 
@@ -95,30 +95,15 @@ if($active==0)
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">trending_up</i></h2>
-            <h5 class="center">some statement here</h5>
-
-            <p class="light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-          </div>
+          
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">perm_identity</i></h2>
-            <h5 class="center">some statement here </h5>
-
-            <p class="light">Osome statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </p>
-          </div>
+          
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">some statement here </h5>
-
-            <p class="light">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here  </p>
-          </div>
+          
         </div>
       </div>
 
@@ -132,7 +117,7 @@ if($active==0)
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 -text">some statement here </h3>
-    <h6 class="header col s12 white-text ">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>
+	  <h6 class="header col s12 white-text ">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>
         </div>
       </div>
     </div>-->
@@ -148,7 +133,7 @@ if($active==0)
           <h3><i class="material-icons"></i></h3>
 
           <h4>Mission</h4>
-          <p class="left-align light"> As fellow college students we understand the miseries students have to undergo everyday while attending boring lectures. But no worries cause we are here. So want to go to a movie date with your girfriend and attend first day first show, go ahead!! We got you covered. Want to grab some extra sleep, sure why not. Just setup an account and send proxy requests, we will hook you up with the right peeps!! Whats more, the service is absolutely free </p>
+          <p class="left-align light"> As fellow college students we understand the miseries students have to undergo everyday while attending boring lectures. But no worries cause we are here. We at Proxy Solutions believe that its okay to not attend a lecture or two. And what we provide is a platform to getattendance even if you don't attend a lecture. So want to go to a movie date with your girfriend and attend first day first show, go ahead!! We got you covered. Want to grab some extra sleep, sure why not. Just setup an account and send proxy requests, we will hook you up with the right peeps!! Whats more, the service is absolutely free </p>
         </div>
       </div>
 
@@ -159,9 +144,9 @@ if($active==0)
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 light">some statement here </h3>
-  
-    <h2 class="header col s12 white-text">some statement here </h2>
-    <h6 class="header col s12 white-text">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>    
+	
+	  <h2 class="header col s12 white-text">some statement here </h2>
+	  <h6 class="header col s12 white-text">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here <h6>		
         </div>
       </div>-->
     </div>
@@ -177,8 +162,8 @@ if($active==0)
           <h3><i class="material-icons"></i></h3>
           <h4>About Us</h4>
           <a href="https://www.facebook.com/khareabhinav"><p class="left-align light">Abhinav Khare</p></a>
-  <a href="https://www.facebook.com/sandeepksingh25"><p class="left-align light">Sandeep Kumar Singh</p></a>
-  <a href="https://www.facebook.com/padiashubham?fref=ts"><p class="left-align light">Shubham Padia</p></a>
+	<a href="https://www.facebook.com/sandeepksingh25"><p class="left-align light">Sandeep Kumar Singh</p></a>
+	<a href="https://www.facebook.com/padiashubham?fref=ts"><p class="left-align light">Shubham Padia</p></a>
 
   <p class="left-align light"> We three are college students currently pursuing Bachelors in Technology from Indian Institute of Information Technology, Allahabad
 </p>
@@ -193,7 +178,7 @@ if($active==0)
       <div class="container">
         <div class="row center">
          <h2 class="header col s12 red-text text-darken-3">some statement here </h2>
-    <h6 class="header col s12 red-text text-darken-3">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </h6> 
+	  <h6 class="header col s12 red-text text-darken-3">some statement here some statement here some statement here some statement here some statement here some statement here some statement here some statement here </h6>	
         </div>
       </div>
     </div>-->
@@ -215,7 +200,7 @@ if($active==0)
 <p class="left-align light"> We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.
 </p>
 <h5>Want to know more?</h5>
-<p class="left-align light"> Click <a href ="contact.html">here!</a>
+<p class="centre-align light"> Click <a href ="contact.html">here!</a>
 </p>
 
         </div>
@@ -234,9 +219,9 @@ if($active==0)
 
         <div class="row center">
           <h2 class="header col s12 white-text">some statement here</h2>
-    <h5 class="header col s12 red-text text-darken-3">some statement here </h5>
+	  <h5 class="header col s12 red-text text-darken-3">some statement here </h5>
 <h5 class="header col s12 red-text">some statement here </h5>
-<h5 class="header col s12 red-text">some statement here </h5> 
+<h5 class="header col s12 red-text">some statement here </h5>	
         </div>
       </div>
     </div>-->
