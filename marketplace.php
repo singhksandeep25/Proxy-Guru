@@ -65,7 +65,7 @@ if(!isset($_SESSION['user'])!="")
     <header>
       <nav class="top-nav" >
         <div class="container">
-          <div class="nav-wrapper"><a href = "home.html" class="page-title">Home</a></div>
+          <div class="nav-wrapper"><a href = "home.php" class="page-title">Home</a></div>
         </div>
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
@@ -76,11 +76,12 @@ if(!isset($_SESSION['user'])!="")
        <!-- <a id = "bar" style="font-family: Roboto, sans-serif">-->
 
 
-        <li class="bold"><a class=fo href="home.html" class="waves-effect waves-teal">Home</a></li>
+        <li class="bold"><a class=fo href="home.php
+        " class="waves-effect waves-teal">Home</a></li>
         <li class="bold"><a href="marketplace.php" class="waves-effect waves-teal">Marketplace</a></li>
         
         <li class="bold"><a href="myrequests.php" class="waves-effect waves-teal">My Requests</a></li>
-        <li class="bold"><a href="contact.html" class="waves-effect waves-teal">Contact Us</a></li>
+        <li class="bold"><a href="contact.php" class="waves-effect waves-teal">Contact Us</a></li>
       </ul>
 
       </a>
@@ -181,7 +182,7 @@ $x = 1;
  	}
  	
  	if ($status==1){
- 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card green accent-3";alert("hi");</script>';
+ 	echo '<script type = "text/javascript">document.getElementById("'.$x.'").className = "card green accent-3";</script>';
  	}
  	
  	   $x++;
